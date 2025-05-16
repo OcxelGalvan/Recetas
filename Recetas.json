@@ -1,0 +1,413 @@
+[
+  {
+    "id": 1,
+    "titulo": "Hotcakes Esponjosos",
+    "ingredientes": [
+      "1 taza de harina",
+      "1 huevo",
+      "1 taza de leche",
+      "2 cucharadas de azúcar",
+      "1 cucharadita de polvo para hornear"
+    ],
+    "preparacion": [
+      "Mezcla en un bowl la harina, el azúcar y el polvo para hornear.",
+      "Añade la leche y el huevo, y bate hasta obtener una mezcla homogénea.",
+      "Calienta un sartén antiadherente a fuego medio y vierte un poco de la mezcla.",
+      "Cocina hasta que salgan burbujas en la superficie, voltea y cocina el otro lado hasta dorar."
+    ],
+    "tips": "Agrega unas gotas de esencia de vainilla para un sabor más delicioso.",
+    "presentacion": "Sirve los hotcakes apilados, bañados con miel de maple y acompañados de frutas frescas como fresas o plátano.",
+   "imagenes": [
+  "https://www.gourmet.cl/wp-content/uploads/2024/12/HOTCAKES.jpg",
+  "https://images.aws.nestle.recipes/original/4ba3978c241c628affcaf5c4e837270e_hot_cakes_clasicos_-_desayuno.jpg",
+  "https://images.aws.nestle.recipes/original/4ba3978c241c628affcaf5c4e837270e_hot_cakes_clasicos_-_desayuno.jpg",
+  "https://editorialtelevisa.brightspotcdn.com/dims4/default/2ff39fa/2147483647/strip/true/crop/672x672+417+0/resize/1000x1000!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fad%2Fd7%2Ffb43cde3404f9eea6995eb5dbea1%2Fmini-hot-cakes-receta-facil-y-rapido.jpg"
+],
+    "nutricion": {
+      "proteinas": 6,
+      "grasas": 10,
+      "carbohidratos": 30,
+      "fibra": 2,
+      "azucares": 8
+    },
+    "tiempoEstimado" : "45 minutos",         
+   "tiempoCoccion": "20 minutos",           
+   "dificultad": "Fácil"         
+  },
+  
+  {
+    "id": 2,
+    "titulo": "Ensalada César Clásica",
+    "ingredientes": [
+      "1 lechuga romana",
+      "100 g de crutones",
+      "50 g de queso parmesano rallado",
+      "Para el aderezo: 1 yema de huevo, 2 cucharadas de jugo de limón, 1 cucharadita de mostaza Dijon, 1 diente de ajo picado, 4 cucharadas de aceite de oliva, sal y pimienta"
+    ],
+    "preparacion": [
+      "Lava y corta la lechuga en trozos grandes.",
+      "Mezcla en un bowl la yema, el jugo de limón, la mostaza y el ajo, y añade el aceite poco a poco hasta emulsionar.",
+      "Condimenta con sal y pimienta.",
+      "Mezcla la lechuga con el aderezo, agrega los crutones y espolvorea el parmesano."
+    ],
+    "tips": "Puedes añadir pollo a la plancha para convertirla en un plato más completo.",
+    "presentacion": "Sirve en un plato grande y decora con unas lascas de parmesano extra.",
+   "imagenes": [
+  "https://www.gourmet.cl/wp-content/uploads/2016/09/EnsaladaCesar2.webp",
+  "https://www.goodnes.com/sites/g/files/jgfbjl321/files/srh_recipes/755f697272cbcdc6e5df2adb44b1b705.jpg",
+  "https://newmansown.com/wp-content/uploads/2022/03/Caesar-salad-with-croutons.jpg",
+  "https://www.pequerecetas.com/wp-content/uploads/2017/09/ensalada-cesar.jpg"
+],
+
+    "nutricion": {
+      "proteinas": 8,
+      "grasas": 14,
+      "carbohidratos": 10,
+      "fibra": 3,
+      "azucares": 2
+    },
+    "tiempoEstimado" : "15 minutos",       
+   "tiempoCoccion": "25 minutos",
+   "dificultad": "medio"     
+  },
+  {
+    "id": 3,
+    "titulo": "Smoothie de Mango y Plátano",
+    "ingredientes": [
+      "1 mango maduro",
+      "1 plátano",
+      "1 taza de yogur natural",
+      "1/2 taza de leche",
+      "Miel al gusto"
+    ],
+    "preparacion": [
+      "Pela y corta el mango y el plátano en trozos.",
+      "Colócalos en la licuadora junto con el yogur y la leche.",
+      "Añade miel al gusto.",
+      "Licúa hasta obtener una mezcla suave y homogénea."
+    ],
+    "tips": "Para un smoothie más frío, utiliza frutas congeladas o añade hielo.",
+    "presentacion": "Sirve en vasos altos y decora con una rodaja de plátano o mango.",
+    "imagenes": ["https://media.istockphoto.com/id/1274658583/photo/delicious-mango-smoothie-in-glass-jar.jpg?s=612x612&w=0&k=20&c=wmMyf8oySgD9nZ7o7LsBGycTgx28YmxIGrFRT63HGnM=",
+    "https://mx.boost.com/sites/g/files/lpfasj161/files/2024-05/SMOOTHIE_MANGO.jpg",
+    "https://i.pinimg.com/736x/c7/9b/56/c79b56d4f2ff22608c3d4fc05e894ca2.jpg",
+    "https://i.pinimg.com/736x/be/a4/cc/bea4cc8ab107cb9a5816939ab7a97565.jpg"],
+    "nutricion": {
+      "proteinas": 5,
+      "grasas": 3,
+      "carbohidratos": 35,
+      "fibra": 4,
+      "azucares": 25
+    }
+  },{
+    "id": 4,
+    "titulo": "Tostadas de Pollo",
+    "ingredientes": [
+      "4 tostadas de maíz",
+      "1 pechuga de pollo cocida y deshebrada",
+      "1/2 taza de frijoles refritos",
+      "1/2 taza de lechuga picada",
+      "1/4 taza de crema",
+      "1/4 taza de queso rallado",
+      "Salsa al gusto"
+    ],
+    "preparacion": [
+      "Unta los frijoles refritos sobre las tostadas.",
+      "Agrega el pollo deshebrado encima.",
+      "Coloca lechuga, crema y queso al gusto.",
+      "Añade salsa si deseas más sabor."
+    ],
+    "tips": "Puedes usar pollo rostizado para ahorrar tiempo.",
+    "presentacion": "Sirve en un plato extendido y acompaña con rodajas de aguacate.",
+    "imagenes": ["https://media.istockphoto.com/id/1571160407/photo/mexican-tostadas-with-chicken-cooking-traditional-homemade-food-in-mexico-latin-america.jpg?s=612x612&w=0&k=20&c=OCZUSsNUDdB1G2HQ-sbwB6TFeJfudqMcJ6dFlWZ_zvA=",
+    "https://i.pinimg.com/736x/a8/f8/40/a8f84011c00dc4d8f911828b39e7a21e.jpg",
+    "https://i.pinimg.com/736x/b3/83/92/b3839231e8fcc7247b9fdda604588bd3.jpg",
+    "https://i.pinimg.com/736x/5f/a1/8c/5fa18c33220051fdd3543e769386adb7.jpg"],
+    "nutricion": {
+      "proteinas": 18,
+      "grasas": 12,
+      "carbohidratos": 22,
+      "fibra": 4,
+      "azucares": 1
+    },
+    "tiempoEstimado": "25 minutos",
+    "tiempoCoccion": "10 minutos",
+    "dificultad": "Fácil"
+  },{
+    "id": 5,
+    "titulo": "Spaghetti a la Boloñesa",
+    "ingredientes": [
+      "200 g de spaghetti",
+      "250 g de carne molida de res",
+      "1 taza de puré de tomate",
+      "1/2 cebolla picada",
+      "2 dientes de ajo",
+      "Aceite de oliva",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Cocina el spaghetti según las instrucciones del paquete.",
+      "Sofríe la cebolla y el ajo en aceite.",
+      "Agrega la carne molida y cocina hasta que se dore.",
+      "Vierte el puré de tomate y cocina por 10 minutos.",
+      "Mezcla con el spaghetti y sirve caliente."
+    ],
+    "tips": "Puedes añadir un toque de orégano o albahaca para un sabor más italiano.",
+    "presentacion": "Decora con queso parmesano rallado y hojas de albahaca fresca.",
+    "imagenes": ["https://i.pinimg.com/736x/2c/70/67/2c7067ccacb84d77a4faf70372a35e00.jpg",
+    "https://i.pinimg.com/736x/80/78/2c/80782c36dad99bd5cba680d4a78f266b.jpg",
+    "https://i.pinimg.com/736x/ed/de/ae/eddeae6d9d8c0e2709a6e078b012dac8.jpg",
+    "https://i.pinimg.com/736x/e5/b5/3a/e5b53a5c7c34038323d338f53893c250.jpg"]
+,    "nutricion": {
+      "proteinas": 20,
+      "grasas": 15,
+      "carbohidratos": 50,
+      "fibra": 3,
+      "azucares": 5
+    },
+    "tiempoEstimado": "35 minutos",
+    "tiempoCoccion": "25 minutos",
+    "dificultad": "Media"
+  },
+  {
+    "id": 6,
+    "titulo": "Brownies de Chocolate",
+    "ingredientes": [
+      "1 taza de mantequilla derretida",
+      "1 taza de azúcar",
+      "2 huevos",
+      "1/2 taza de cacao en polvo",
+      "1/2 taza de harina",
+      "1 cucharadita de extracto de vainilla",
+      "1 pizca de sal"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 180°C.",
+      "Mezcla la mantequilla con el azúcar, los huevos y la vainilla.",
+      "Agrega el cacao, la harina y la sal. Mezcla bien.",
+      "Vierte en un molde engrasado y hornea por 25-30 minutos.",
+      "Deja enfriar antes de cortar."
+    ],
+    "tips": "Agrega nueces o chispas de chocolate para más textura.",
+    "presentacion": "Sirve con una bola de helado de vainilla encima.",
+    "imagenes": ["https://i.pinimg.com/736x/81/f5/6b/81f56b4e1ec0b3d0d129e03be8470b33.jpg",
+    "https://i.pinimg.com/736x/81/f5/6b/81f56b4e1ec0b3d0d129e03be8470b33.jpg",
+    "https://i.pinimg.com/736x/e7/95/26/e7952629d3c4932551725e63f2363138.jpg",
+    "https://i.pinimg.com/736x/f8/01/2b/f8012bd5959e5cd1ae8ab6489cd42bde.jpg"],
+
+    "nutricion": {
+      "proteinas": 4,
+      "grasas": 18,
+      "carbohidratos": 28,
+      "fibra": 2,
+      "azucares": 20
+    },
+    "tiempoEstimado": "45 minutos",
+    "tiempoCoccion": "30 minutos",
+    "dificultad": "Media"
+  },{
+    "id": 7,
+    "titulo": "Sopa de Verduras Casera",
+    "ingredientes": [
+      "2 zanahorias",
+      "1 papa",
+      "1 calabacita",
+      "1/2 cebolla",
+      "1 diente de ajo",
+      "1 litro de caldo de pollo",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Pica las verduras en cubos pequeños.",
+      "Sofríe la cebolla y el ajo en una olla con un poco de aceite.",
+      "Agrega las verduras y el caldo.",
+      "Cocina a fuego medio por 25-30 minutos.",
+      "Añade sal y pimienta al gusto."
+    ],
+    "tips": "Puedes añadir un poco de arroz o pollo desmenuzado para hacerla más sustanciosa.",
+    "presentacion": "Sirve caliente y decora con perejil picado.",
+    "imagenes": ["https://media.istockphoto.com/id/1092632852/photo/vegetable-soup.jpg?s=612x612&w=0&k=20&c=TLMWC8lshitbk8pONGpblEsmcsBy1wZVQ9jJC92Cvh4=",
+    "https://i.pinimg.com/736x/41/c3/b6/41c3b6aef2932895151a8ab178dcc8e5.jpg",
+    "https://i.pinimg.com/736x/75/dd/0f/75dd0f31fd7bc68329b74291900069e8.jpg",
+    "https://i.pinimg.com/736x/63/d2/c8/63d2c83348331e089fea1b3acee0c0db.jpg"],
+    "nutricion": {
+      "proteinas": 4,
+      "grasas": 3,
+      "carbohidratos": 20,
+      "fibra": 5,
+      "azucares": 5
+    },
+    "tiempoEstimado": "40 minutos",
+    "tiempoCoccion": "30 minutos",
+    "dificultad": "Fácil"
+  },
+  {
+    "id": 8,
+    "titulo": "Tacos de Carnitas",
+    "ingredientes": [
+      "500 g de carne de cerdo",
+      "2 hojas de laurel",
+      "1 diente de ajo",
+      "Sal al gusto",
+      "Tortillas de maíz",
+      "Cilantro y cebolla picada"
+    ],
+    "preparacion": [
+      "Cocina la carne con agua, sal, laurel y ajo hasta que esté suave.",
+      "Fríe la carne en su propia grasa hasta dorar.",
+      "Sirve en tortillas calientes con cebolla y cilantro."
+    ],
+    "tips": "Acompaña con salsa verde o roja y unas gotas de limón.",
+    "presentacion": "Coloca los tacos en un plato con limones partidos al lado.",
+    "imagenes": ["https://media.istockphoto.com/id/1430849921/photo/order-of-tacos-closeup.jpg?s=612x612&w=0&k=20&c=iikaCYoxa9ji21dqzvOZ6B14vrQn4A7ZrtCuYqf1KYM=",
+    "https://i.pinimg.com/736x/4a/c6/22/4ac6227e05f1e93db17770a72fdaa5c6.jpg",
+     "https://i.pinimg.com/736x/4a/c6/22/4ac6227e05f1e93db17770a72fdaa5c6.jpg",
+     "https://i.pinimg.com/736x/0c/eb/da/0cebda157d248e0cc016d1ea2f169a27.jpg"],
+    "nutricion": {
+      "proteinas": 22,
+      "grasas": 18,
+      "carbohidratos": 12,
+      "fibra": 2,
+      "azucares": 1
+    },
+    "tiempoEstimado": "1 hora",
+    "tiempoCoccion": "45 minutos",
+    "dificultad": "Media"
+  },
+  {
+    "id": 9,
+    "titulo": "Pizza Margarita Casera",
+    "ingredientes": [
+      "1 base de pizza",
+      "1/2 taza de salsa de tomate",
+      "150 g de queso mozzarella",
+      "Hojas de albahaca fresca",
+      "Aceite de oliva",
+      "Sal al gusto"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 200°C.",
+      "Unta la salsa sobre la base de pizza.",
+      "Agrega el queso y algunas hojas de albahaca.",
+      "Rocía con aceite de oliva y hornea por 15-20 minutos."
+    ],
+    "tips": "Puedes usar pan pita como base rápida.",
+    "presentacion": "Corta en rebanadas y decora con más albahaca fresca al salir del horno.",
+    "imagenes": ["https://i.pinimg.com/736x/57/e7/a1/57e7a19334571946391a7430fcb86202.jpg",
+    "https://i.pinimg.com/736x/e0/ee/53/e0ee53b67faea1811358ae9b0c0cb303.jpg",
+    "https://i.pinimg.com/736x/92/ad/03/92ad03ae1fcbc8bc94c3cc7570e0dbc6.jpg",
+    "https://i.pinimg.com/736x/dd/e7/af/dde7afb57b4bd90603d36d0e9605c78f.jpg"]
+,    "nutricion": {
+      "proteinas": 16,
+      "grasas": 14,
+      "carbohidratos": 30,
+      "fibra": 2,
+      "azucares": 3
+    },
+    "tiempoEstimado": "30 minutos",
+    "tiempoCoccion": "15 minutos",
+    "dificultad": "Fácil"
+  },
+  {
+    "id": 10,
+    "titulo": "Omelette de Espinacas",
+    "ingredientes": [
+      "2 huevos",
+      "1/2 taza de espinacas frescas",
+      "2 cucharadas de queso rallado",
+      "Sal y pimienta",
+      "Aceite o mantequilla"
+    ],
+    "preparacion": [
+      "Bate los huevos con sal y pimienta.",
+      "Saltea las espinacas brevemente.",
+      "Vierte los huevos batidos y agrega el queso.",
+      "Cocina a fuego medio hasta cuajar y dobla por la mitad."
+    ],
+    "tips": "Puedes añadir champiñones o jitomate para más sabor.",
+    "presentacion": "Sirve con pan tostado y frutas al lado.",
+    "imagenes": ["https://i.pinimg.com/736x/98/e8/a5/98e8a5d3ac4dfe65448b135e470bebe2.jpg",
+"https://i.pinimg.com/736x/d5/36/88/d53688b801ac5b1e0b99fd865b8bff31.jpg",
+"https://i.pinimg.com/736x/77/02/fb/7702fb40d95181de51577c49057b065b.jpg",
+"https://i.pinimg.com/736x/0d/96/39/0d9639aa9c7bba406fa83436038664f7.jpg"],
+    "nutricion": {
+      "proteinas": 12,
+      "grasas": 10,
+      "carbohidratos": 2,
+      "fibra": 1,
+      "azucares": 1
+    },
+    "tiempoEstimado": "15 minutos",
+    "tiempoCoccion": "5 minutos",
+    "dificultad": "Fácil"
+  },{
+    "id": 11,
+    "titulo": "Brochetas de Res a la Parrilla",
+    "ingredientes": [
+      "500 g de carne de res en cubos",
+      "1 pimiento rojo",
+      "1 pimiento verde",
+      "1 cebolla morada",
+      "Aceite de oliva",
+      "Sal y pimienta al gusto",
+      "Palitos para brocheta"
+    ],
+    "preparacion": [
+      "Corta los vegetales en trozos del mismo tamaño que la carne.",
+      "Arma las brochetas alternando carne y vegetales.",
+      "Rocía con aceite de oliva, sal y pimienta.",
+      "Cocina a la parrilla por 10-12 minutos, volteando ocasionalmente."
+    ],
+    "tips": "Marina la carne con jugo de limón y ajo por 30 minutos antes de asar.",
+    "presentacion": "Sirve sobre una tabla de madera con salsa chimichurri.",
+    "imagenes": ["https://i.pinimg.com/736x/33/32/28/3332288789d8340b5479baa0e16bde1c.jpg",
+    "https://i.pinimg.com/736x/19/09/51/190951b5771fb00c2144fab9c66bbd04.jpg",
+    "https://i.pinimg.com/736x/53/42/5b/53425b7393d6a190923a3cac49ceba4a.jpg",
+    "https://i.pinimg.com/736x/e9/cc/76/e9cc766d5aec2888addf7e5a461dbb53.jpg"], 
+      "nutricion": {
+      "proteinas": 25,
+      "grasas": 12,
+      "carbohidratos": 6,
+      "fibra": 2,
+      "azucares": 3
+    },
+    "tiempoEstimado": "40 minutos",
+    "tiempoCoccion": "12 minutos",
+    "dificultad": "Media"
+  },{
+    "id": 12,
+    "titulo": "Filete de Salmón al Horno con Hierbas",
+    "ingredientes": [
+      "2 filetes de salmón",
+      "2 cucharadas de jugo de limón",
+      "1 cucharada de aceite de oliva",
+      "Hierbas secas (romero, tomillo, orégano)",
+      "Sal y pimienta al gusto"
+    ],
+    "preparacion": [
+      "Precalienta el horno a 200°C.",
+      "Coloca los filetes en una bandeja para hornear.",
+      "Rocía con jugo de limón, aceite y espolvorea con hierbas.",
+      "Hornea durante 15 minutos o hasta que el salmón esté cocido."
+    ],
+    "tips": "Acompáñalo con arroz integral o vegetales al vapor.",
+    "presentacion": "Decora con rodajas de limón y hierbas frescas.",
+    "imagenes": ["https://i.pinimg.com/736x/61/fd/04/61fd04c32adf4e3f5be948628caeb89a.jpg",
+    "https://i.pinimg.com/736x/73/f5/38/73f5381875ac9c84d233720760058936.jpg",
+    "https://i.pinimg.com/736x/12/e2/c0/12e2c04b9d55a04504a4537d33e3f521.jpg",
+    "https://i.pinimg.com/736x/ad/e7/f6/ade7f6ea7e2964576a939ba3bf21044f.jpg"],
+  
+    "nutricion": {
+      "proteinas": 26,
+      "grasas": 14,
+      "carbohidratos": 1,
+      "fibra": 0,
+      "azucares": 0
+    },
+    "tiempoEstimado": "25 minutos",
+    "tiempoCoccion": "15 minutos",
+    "dificultad": "Fácil"
+  }
+ 
+]
+

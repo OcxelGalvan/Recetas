@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recetas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+   
+
+      
+      background: #fff;
+      color: #000;
+    }
+
+    /* === AJUSTES RESPONSIVOS === */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 250px; /* Carrusel más pequeño en móvil */
+  }
+
+  .carousel-caption-custom {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+    background: transparent;
+    padding: 0;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .categoria-item img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+}
+
+@media (min-width: 769px) {
+  .categoria-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+}
+
+/* Evitar desbordamiento horizontal */
+body {
+  overflow-x: hidden;
+}
+
+    .margen-contenido {
+      padding: 0 5%;
+    }
+    .categoria-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: box-shadow 0.3s, transform 0.3s;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .categoria-item.active img {
+      box-shadow: 0 0 0 8px rgba(52, 58, 64, 0.8);
+      transform: scale(1.05);
+    }
+    
+    .categoria-item p {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    
+    
+
+    .pop {
+        animation: pop 0.3s ease;
+      }
+      @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.5); }
+        100% { transform: scale(1); }
+      }
+      .favorite {
+        color: red;
+      }
+
+      
+    .carousel-caption-custom {
+      position: absolute;
+      top: 35%;
+      right: 18%;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 12px;
+      color: #000;
+      text-align: center;
+      width: 300px;
+    }
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    nav {
+        background-color: #000000;
+      }
+      nav a {
+        color: #ffffff;
+      }
+      .navbar-brand, .nav-link {
+        color: #ffffff !important;
+      }
+      
+      .search-bar {
+        width: 400px; /* puedes ajustar el tamaño a tu gusto */
+        text-align: center;
+      }
+      
+    .categorias {
+      margin-top: 50px;
+    }
+    .categoria-item {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .categoria-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+    .categoria-item img:hover {
+      transform: scale(1.1);
+    }
+    .categoria-item p {
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Recetas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+       <form class="d-flex flex-column flex-md-row mx-auto gap-2" role="search">
+            <input class="form-control me-2 search-bar" type="search" placeholder="¿Qué vas a cocinar hoy?" aria-label="Buscar">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Carrusel -->
+<div class="container margen-contenido mt-4">
+  <div id="carruselRecetas" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active position-relative">
+        <img src="https://media.istockphoto.com/id/904320854/photo/sweet-homemade-stack-of-pancakes.jpg?s=612x612&w=0&k=20&c=gULuTkMo6WdBxS7cTVuXNnfhtZJLipiCDZ4PSOCjdPg=" class="d-block w-100" alt="Receta 1">
+        <div class="carousel-caption-custom">
+          <h5>Hotcakes Esponjosos</h5>
+          <p>¡Perfecto para las mañanas!</p>
+          <a href="1.html?id=1" class="btn btn-dark">Ver Receta</a>
+        </div>
+      </div>
+
+      <div class="carousel-item position-relative">
+        <img src="https://media.istockphoto.com/id/1211166166/photo/caesar-salad-with-grilled-chicken-and-croutons-of-bread.jpg?s=612x612&w=0&k=20&c=anNWizfxset3nOpS9zxGU1PCgn6dBwILhqYIED4qxYY=" class="d-block w-100" alt="Receta 2">
+        <div class="carousel-caption-custom">
+          <h5>Ensalada César</h5>
+          <p>Deliciosa y Fresca.</p>
+          <a href="1.html?id=2" class="btn btn-dark">Ver Receta</a>
+        </div>
+      </div>
+
+      <div class="carousel-item position-relative">
+        <img src="https://media.istockphoto.com/id/1274658583/photo/delicious-mango-smoothie-in-glass-jar.jpg?s=612x612&w=0&k=20&c=wmMyf8oySgD9nZ7o7LsBGycTgx28YmxIGrFRT63HGnM=" class="d-block w-100" alt="Receta 3">
+        <div class="carousel-caption-custom">
+          <h5>Smoothie de Mango</h5>
+          <p>Una dulce y rica bebida.</p>
+          <a href="1.html?id=2" class="btn btn-dark">Ver Receta</a>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselRecetas" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselRecetas" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Categorías -->
+<div class="container margen-contenido categorias">
+  <h3 class="text-center mb-4">¿Qué quieres cocinar?</h3>
+  <div class="row row-cols-2 row-cols-md-5 g-4">
+
+    <div class="col categoria-item">
+      <img src="https://s3.abcstatics.com/abc/sevilla/media/gurme/2022/07/14/s/recetas-pasta-faciles-rapidas-0003-kgLH--940x529@abc.jpg"alt="Fáciles">
+      <p>Fáciles</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://media.istockphoto.com/id/139885298/photo/baked-goods.jpg?s=612x612&w=0&k=20&c=jCRsN7QOZ8Lh2SWP_uVy-2ydi1mF2jZzA-i44EilGNM="alt="Postres">
+      <p>Postres</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://media.istockphoto.com/id/1200498591/photo/various-types-of-fresh-meat-pork-beef-turkey-and-chicken-top-view.jpg?s=612x612&w=0&k=20&c=yseJrNrUK6G5KkxJ9_Ck-NRbMDZOo-9jAt986xG7Lik=" alt="Pollo y Carne">
+      <p>Pollo y Carne</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://www.lanacion.com.ar/resizer/v2/pinchos-al-disco-a-la-parrilla-todo-vale-a-la-WIXSPL4LJNEHDD66YPKZKBNEDU.jpeg?auth=f821f91eee77449df7a77f14a3f000aaaf6d9e354cd6a6abad4d493523f11afc&width=420&height=280&quality=70&smart=true" alt="Parrilla">
+      <p>Recetas a la Parrilla</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://media.istockphoto.com/id/1454741285/photo/roast-fish-and-vegetable-salad-on-wooden-background.jpg?s=612x612&w=0&k=20&c=Slmk-RLvdR3317E5W2UKLul4y1ZH3axjL2XCNOBZbhE=" alt="Ensaladas">
+      <p>Ensaladas</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfaFTAIlljHZr-i0YYgL_jY0jcIBZt2LBZkg&s" alt="Guarniciones">
+      <p>Guarniciones</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://media.istockphoto.com/id/1305699663/photo/seafood-platter-grilled-lobster-shrimps-scallops-langoustines-octopus-squid-on-white-plate.jpg?s=612x612&w=0&k=20&c=iEwdxon7CJ0wQEDy8-kwnz7TLdknVw05vaa-Qc_aHow=" alt="Pescados y Mariscos">
+      <p>Pescados y Mariscos</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="data:image/jpeg;base64,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" alt="Platos Fuertes">
+      <p>Platos Fuertes</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://media.istockphoto.com/id/1144823591/photo/spaghetti-in-a-dish-on-a-white-background.jpg?s=612x612&w=0&k=20&c=SeEWmJfPQlX1zVUHPKjL-cgYeMs9cZ97-kdZMm7feA4=" alt="Recetas de Pastas">
+      <p>Recetas de Pastas</p>
+    </div>
+
+    <div class="col categoria-item">
+      <img src="https://media.istockphoto.com/id/1468860049/photo/fitness-woman-eating-a-healthy-poke-bowl-in-the-kitchen-at-home.jpg?s=612x612&w=0&k=20&c=XDY46BP4RgFqq27GjLYbrAhIUnz3rkKXlu0axO-N39A=" alt="Saludables">
+      <p>Saludables</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Inicio de Sesión -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="login.php" method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-dark w-100">Entrar</button>
+        </div>
+        <div class="modal-footer">
+          <p class="text-center w-100">¿No tienes cuenta?
+            <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Regístrate</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  
+<!-- Modal Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form action="register.php" method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Crear Cuenta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="newEmail" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="newEmail" name="newEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="newPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+          </div>
+          <button type="submit" class="btn btn-dark w-100">Registrarse</button>
+        </div>
+        <div class="modal-footer">
+          <p class="text-center w-100">¿Ya tienes cuenta?
+            <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Inicia Sesión</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+   
+
+  <!-- Recetas -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 card-item" data-category="Fáciles, Postres">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/904320854/photo/sweet-homemade-stack-of-pancakes.jpg?s=612x612&w=0&k=20&c=gULuTkMo6WdBxS7cTVuXNnfhtZJLipiCDZ4PSOCjdPg=" class="card-img-top" alt="Receta 1">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Hotcakes Esponjosos</h5>
+            <p class="card-text">Perfectos para el desayuno, suaves y listos en minutos.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐☆
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=1" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 mb-4 card-item" data-category="Ensaladas,Saludables">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1211166166/photo/caesar-salad-with-grilled-chicken-and-croutons-of-bread.jpg?s=612x612&w=0&k=20&c=anNWizfxset3nOpS9zxGU1PCgn6dBwILhqYIED4qxYY=" class="card-img-top" alt="Receta 2">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Ensalada César Clásica</h5>
+            <p class="card-text">Una ensalada clásica con un aderezo casero irresistible.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐☆
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=2" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 card-item" data-category="Saludables,Fáciles">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1274658583/photo/delicious-mango-smoothie-in-glass-jar.jpg?s=612x612&w=0&k=20&c=wmMyf8oySgD9nZ7o7LsBGycTgx28YmxIGrFRT63HGnM=" class="card-img-top" alt="Receta 3">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Smoothie de Mango y Plátano</h5>
+            <p class="card-text">Refrescante, dulce y natural: ideal para un snack saludable.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=3" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Fáciles,Pollo y Carne">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1571160407/photo/mexican-tostadas-with-chicken-cooking-traditional-homemade-food-in-mexico-latin-america.jpg?s=612x612&w=0&k=20&c=OCZUSsNUDdB1G2HQ-sbwB6TFeJfudqMcJ6dFlWZ_zvA=" class="card-img-top" alt="Receta 4">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Tostadas de Pollo</h5>
+            <p class="card-text">Crujientes, frescas y llenas de sabor mexicano.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=4" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Recetas de Pastas,Platos Fuertes">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1429067111/photo/spaghetti-bolognese-top-view-close-up-no-people-homemade.jpg?s=612x612&w=0&k=20&c=bbQNnyIcRNBUXgWemvw7EeFufrbKlMDeoft1POUtVEg=" class="card-img-top" alt="Receta 5">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Spaghetti a la Boloñesa</h5>
+            <p class="card-text">Un clásico italiano con carne y salsa de tomate casera.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=5" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Postres">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/689260420/photo/delicious-homemade-brownie-with-chocolate-sauce-and-caramel-on-the-table-selective-focus.jpg?s=612x612&w=0&k=20&c=DckwrlL9Wr4oLBegrcjesdRL4ABzB8edODjPnT9EUxI=" class="card-img-top" alt="Receta 6">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Brownies de Chocolate</h5>
+            <p class="card-text">Húmedos, intensos y deliciosos: el postre favorito de todos.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐☆
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=6" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Saludables,Fáciles">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1092632852/photo/vegetable-soup.jpg?s=612x612&w=0&k=20&c=TLMWC8lshitbk8pONGpblEsmcsBy1wZVQ9jJC92Cvh4=" class="card-img-top" alt="Receta 7">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Sopa de Verduras Casera</h5>
+            <p class="card-text">Una opción reconfortante y saludable para cualquier día.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐☆
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=7" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Platos Fuertes,Recetas a la Parrilla">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1430849921/photo/order-of-tacos-closeup.jpg?s=612x612&w=0&k=20&c=iikaCYoxa9ji21dqzvOZ6B14vrQn4A7ZrtCuYqf1KYM=" class="card-img-top" alt="Receta 8">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Tacos de Carnitas</h5>
+            <p class="card-text">Tradicionales, jugosos y perfectos para una taquiza.”</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=8" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Platos fuertes,Fáciles">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1414575281/photo/a-delicious-and-tasty-italian-pizza-margherita-with-tomatoes-and-buffalo-mozzarella.jpg?s=612x612&w=0&k=20&c=v8mdiAa_5NaRYtIscClXe85lLzkx7loSd9_pJWt9G2o=" class="card-img-top" alt="Receta 9">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Pizza Margarita Casera</h5>
+            <p class="card-text">Sencilla y deliciosa, con queso derretido y albahaca fresca.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐☆
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=9" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Saludables,Fáciles">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/466063332/photo/frittata-with-chicken-and-spinach-and-fresh-spinach.jpg?s=612x612&w=0&k=20&c=4K_Q1Tyeymni7OiVF-KoRndMOMlgQ_RBuTovfrhohRQ=" class="card-img-top" alt="Receta 10">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Omelette de Espinacas</h5>
+            <p class="card-text">Ligero, nutritivo y fácil de preparar en minutos.</p>
+            <div class="mb-2">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=10" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 card-item" data-category="Pollo y Carne, Recetas a la Parrilla">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=0&k=20&c=IsvHBVukF10ZLODFrM0OiqkyDgd35Dd1L6oq3fwOE4I=" class="card-img-top" alt="Receta 11">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Brochetas de Res a la Parrilla</h5>
+            <p class="card-text">Sabrosas y coloridas, perfectas para compartir en parrillada.</p>
+            <div class="mb-2">
+              ⭐⭐⭐☆☆
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=11" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 card-item" data-category="Pescados y Mariscos,Saludables">
+        <div class="card h-100">
+          <img src="https://media.istockphoto.com/id/1214416414/photo/barbecued-salmon-fried-potatoes-and-vegetables-on-wooden-background.jpg?s=612x612&w=0&k=20&c=Y8RYbZFcvec-FXMMuoU-qkprC3TUFNiw3Ysoe8Drn6g=" class="card-img-top" alt="Receta 12">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Filete de Salmón al Horno con Hierbas</h5>
+            <p class="card-text">Ligero y elegante, con el aroma de hierbas frescas.</p>
+            <div class="mb-2">
+              ⭐⭐⭐☆☆
+            </div>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="1.html?id=12" class="btn btn-dark ">Ver Receta</a>
+              <button class="btn btn-outline-danger"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hearts = document.querySelectorAll('.btn-outline-danger');
+  
+      hearts.forEach(heart => {
+        heart.addEventListener('click', function() {
+          const icon = this.querySelector('i');
+          icon.classList.toggle('bi-heart');
+          icon.classList.toggle('bi-heart-fill');
+          icon.classList.toggle('favorite');
+          
+          // Agregar animación de "pop"
+          icon.classList.add('pop');
+          setTimeout(() => {
+            icon.classList.remove('pop');
+          }, 300);
+        });
+      });
+    });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form[role="search"]');
+      const searchInput = document.querySelector('.search-bar');
+      const allCards = document.querySelectorAll('.card');
+  
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const query = searchInput.value.toLowerCase();
+  
+        allCards.forEach(card => {
+          const title = card.querySelector('.card-title').innerText.toLowerCase();
+          if (title.includes(query)) {
+            card.parentElement.style.display = 'block'; // muestra la columna completa
+          } else {
+            card.parentElement.style.display = 'none'; // oculta la columna
+          }
+        });
+      });
+    });
+  </script>
+  
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const categoriaItems = document.querySelectorAll('.categoria-item');
+    const cards = document.querySelectorAll('.card-item');
+
+    let categoriaActiva = null;
+
+    categoriaItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const categoriaSeleccionada = item.querySelector('p').textContent.trim();
+
+        // Si se hace clic en la misma categoría activa, desactivar
+        if (categoriaActiva === categoriaSeleccionada) {
+          item.classList.remove('active');
+          categoriaActiva = null;
+
+          // Mostrar todas las tarjetas
+          cards.forEach(card => {
+            card.style.display = 'block';
+          });
+
+        } else {
+          // Desactivar todas
+          categoriaItems.forEach(el => el.classList.remove('active'));
+          // Activar la nueva
+          item.classList.add('active');
+          categoriaActiva = categoriaSeleccionada;
+
+          // Filtrar tarjetas
+          cards.forEach(card => {
+            const categorias = card.getAttribute('data-category')?.split(',').map(c => c.trim()) || [];
+            card.style.display = categorias.includes(categoriaSeleccionada) ? 'block' : 'none';
+          });
+        }
+      });
+    });
+  });
+</script>
+
+  
+  
+  
+
+</body>
+</html>

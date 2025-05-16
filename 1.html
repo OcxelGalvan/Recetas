@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<head>
+  <style>
+    body {
+        background: #fff;
+        color: #000;
+      }
+      /* === AJUSTES RESPONSIVOS === */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+  }
+
+  .card-receta {
+    padding: 20px;
+  }
+
+  .carousel-caption-custom {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+    background: transparent;
+    padding: 0;
+  }
+
+  #imagenPrincipal {
+    max-height: 250px;
+  }
+
+  .miniatura {
+    width: 60px;
+    height: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .miniatura {
+    width: 100px;
+    height: auto;
+  }
+
+  #imagenPrincipal {
+    max-height: 400px;
+  }
+}
+
+/* Evitar desbordamiento horizontal */
+body {
+  overflow-x: hidden;
+}
+
+      .margen-contenido {
+        padding: 0 5%;
+      }
+      .card-receta {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .linea-separacion {
+        border-top: 2px solid #ddd;
+        margin: 40px 0 20px 0;
+      }
+    nav {
+        background-color: #000000;
+      }
+      nav a {
+        color: #ffffff;
+      }
+      .navbar-brand, .nav-link {
+        color: #ffffff !important;
+      }
+      
+      .search-bar {
+        width: 400px; /* puedes ajustar el tamaño a tu gusto */
+        text-align: center;
+      }
+
+      .miniatura {
+        cursor: pointer;
+      }
+      .miniatura.active {
+        border: 3px solid red;
+      }
+
+      #imagenPrincipal {
+        transition: opacity 0.3s ease;
+      }
+    /* Aquí va el mismo CSS que pusiste */
+    /* (pegamos aquí todo tu CSS anterior) */
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="tituloPagina">Cargando receta...</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Recetas.html">Recetas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="d-flex flex-column flex-md-row mx-auto gap-2" role="search">
+          <input class="form-control me-2 search-bar" type="search" placeholder="¿Qué vas a cocinar hoy?" aria-label="Buscar">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      <ul class="navbar-nav ms-3">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal Inicio de Sesión -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password">
+          </div>
+          <button type="submit" class="btn btn-dark w-100">Entrar</button>
+        </form>
+        <hr>
+        <p class="text-center">¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Regístrate</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="newEmail" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="newEmail">
+          </div>
+          <div class="mb-3">
+            <label for="newPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="newPassword">
+          </div>
+          <button type="submit" class="btn btn-dark w-100">Crear Cuenta</button>
+        </form>
+        <hr>
+        <p class="text-center">¿Ya tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Inicia Sesión</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-receta mx-auto" style="max-width: 800px;">
+
+  <!-- Galería de imágenes -->
+  <div class="row mb-4 align-items-center">
+    <div class="col-md-3">
+      <div class="d-flex flex-column align-items-center gap-2">
+        <img src="..." class="img-thumbnail miniatura" alt="Miniatura 1" onclick="cambiarImagen('...')">
+        <img src="..." class="img-thumbnail miniatura" alt="Miniatura 2" onclick="cambiarImagen('...')">
+        <img id="imagen" src="..." class="img-thumbnail miniatura" alt="Miniatura 3" onclick="cambiarImagen('...')">
+      </div>
+    </div>
+
+    <div class="col-md-9 text-center">
+      <img id="imagenPrincipal" src="..." class="img-fluid rounded" style="max-height: 400px;" alt="Imagen Principal">
+    </div>
+  </div>
+
+  <!-- Contenido de receta -->
+  <h2 id="titulo" class="text-center mb-4">Título de la receta</h2>
+
+  <div class="row text-center mb-4">
+    <div class="col-md-4"><p>⏳ Tiempo estimado: <span id="tiempoEstimado"></span></p>    </div>
+    <div class="col-md-4"><p>🍳 Tiempo de cocción: <span id="tiempoCoccion"></span></p>    </div>
+    <div class="col-md-4"><p>📈 Nivel de dificultad: <span id="dificultad"></span></p>
+    </div>
+  </div>
+
+  <h2>Ingredientes</h2>
+  <ul id="ingredientes">
+    <!-- Aquí se llenan los ingredientes desde JS -->
+  </ul>
+
+  <h2>Preparación</h2>
+  <ol id="preparacion">
+    <!-- Aquí se llenan los pasos desde JS -->
+  </ol>
+
+  <h2>Tips</h2>
+  <p id="tips">Aquí irán los tips</p>
+
+  <h2>Presentación</h2>
+  <p id="presentacion">Aquí la sugerencia de presentación</p>
+
+ <!-- Gráfica Nutricional -->
+ <div class="text-center mt-5">
+  <h4>Información Nutricional</h4>
+  <div style="width: 300px; height: 200px; margin: auto;">
+    <canvas id="graficaNutricion"></canvas>
+  </div>
+</div>
+
+
+  <hr class="my-5">
+
+<h4>Comentarios</h4>
+<form id="formComentario" class="mb-4">
+  <div class="form-group">
+    <textarea id="comentarioTexto" class="form-control" rows="3" placeholder="Escribe tu reseña aquí..." required></textarea>
+  </div>
+  <div class="form-group mt-2">
+    <input id="comentarioImagen" type="file" accept="image/*" class="form-control-file">
+  </div>
+  <button type="submit" class="btn btn-dark mt-2">Publicar Comentario</button>
+</form>
+
+<!-- Contenedor dinámico de comentarios -->
+<div id="listaComentarios" class="mt-4"></div>
+
+
+</div> <!-- Fin Card -->
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="cargarReceta.js"></script>
+
+  <!-- Código para manejar el buscador -->
+  <script>
+    document.getElementById('formBuscar').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const id = document.getElementById('buscarInput').value.trim();
+      if (id) {
+        window.location.href = `receta.html?id=${encodeURIComponent(id)}`;
+      }
+    });
+  </script>
+
+  <script>
+    function cambiarImagen(ruta) {
+      document.getElementById('imagenPrincipal').src = ruta;
+    }
+  </script>
+  
+  <script>
+    const miniaturas = document.querySelectorAll('.miniatura');
+    miniaturas.forEach(img => {
+      img.addEventListener('click', function() {
+        miniaturas.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+  <script>
+    function cambiarImagen(ruta) {
+      const imagen = document.getElementById('imagenPrincipal');
+  
+      // Primero, hacemos que se desvanezca (opacidad a 0)
+      imagen.style.opacity = 0;
+  
+      // Después de un pequeño delay, cambiamos la imagen
+      setTimeout(() => {
+        imagen.src = ruta;
+        // Luego, volvemos a hacerla visible (opacidad a 1)
+        imagen.style.opacity = 1;
+      }, 300); // 300 milisegundos de desvanecimiento
+    }
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="cargarReceta.js"></script>
+<script>
+  const formComentarios = document.querySelector('form.mb-4');
+  const textarea = formComentarios.querySelector('textarea');
+  const inputFile = formComentarios.querySelector('input[type="file"]');
+  const contenedorComentarios = document.querySelector('.mt-4');
+
+  // Obtener ID de receta desde URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const recetaId = urlParams.get('id') || 'desconocida';
+  const storageKey = `comentarios_receta_${recetaId}`;
+
+  function renderComentarios() {
+    contenedorComentarios.innerHTML = '';
+    const comentarios = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comentarios.forEach(c => {
+      const div = document.createElement('div');
+      div.className = 'border rounded p-3 mb-3';
+      div.innerHTML = `
+        <strong>${c.usuario || 'Usuario Anónimo'}</strong>
+        <p>${c.texto}</p>
+        ${c.imagen ? `<img src="${c.imagen}" class="img-fluid rounded mt-2" style="max-width: 200px;">` : ''}
+      `;
+      contenedorComentarios.appendChild(div);
+    });
+  }
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('formComentario');
+  const lista = document.getElementById('listaComentarios');
+  const recetaId = new URLSearchParams(window.location.search).get('id') || 'general';
+
+  // Cargar comentarios previos del localStorage
+  const comentarios = JSON.parse(localStorage.getItem(`comentarios_${recetaId}`)) || [];
+
+  function renderComentarios() {
+    lista.innerHTML = '';
+    comentarios.forEach(com => {
+      const div = document.createElement('div');
+      div.className = 'border rounded p-3 mb-3';
+      div.innerHTML = `
+        <strong>${com.usuario}</strong>
+        <p>${com.texto}</p>
+        ${com.imagen ? `<img src="${com.imagen}" class="img-fluid rounded" style="max-width: 200px;" alt="Foto comentario">` : ''}
+      `;
+      lista.appendChild(div);
+    });
+   }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const texto = document.getElementById('comentarioTexto').value.trim();
+    const imagenInput = document.getElementById('comentarioImagen');
+    const file = imagenInput.files[0];
+
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      const nuevoComentario = {
+        usuario: 'Anónimo',
+        texto,
+        imagen: file ? reader.result : null
+      };
+      comentarios.push(nuevoComentario);
+      localStorage.setItem(`comentarios_${recetaId}`, JSON.stringify(comentarios));
+      renderComentarios();
+      form.reset();
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      reader.onloadend(); // llama directamente sin imagen
+    }
+  });
+
+  renderComentarios();
+});
+</script>
+
+  
+ 
+</body>
+</html>
